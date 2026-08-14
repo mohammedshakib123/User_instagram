@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohammed Shakib (@official_shakib13) • 3D Holographic Instagram Card</title>
+  <meta name="description" content="Official 3D Holographic Cyber Portfolio of Mohammed Shakib.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- html2canvas for instant HD download -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <!-- QRCode.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-neon-pink">
+
+  <!-- Ambient Holographic Canvas & Orbs -->
+  <canvas id="ambient-canvas"></canvas>
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="cyber-grid"></div>
+
+  <!-- Top App Bar -->
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-ig-badge">
+        <i class="fa-brands fa-instagram"></i>
+      </div>
+      <span class="brand-text">@official_shakib13</span>
+    </div>
+    <div class="header-controls">
+      <!-- 10 Neon Colors + Rainbow RGB Theme Switcher -->
+      <div class="theme-picker" id="themePicker">
+        <button class="theme-btn active" data-theme="theme-neon-pink" title="Neon Pink" style="background:#ff2a85;"></button>
+        <button class="theme-btn" data-theme="theme-neon-cyan" title="Electric Cyan" style="background:#00f0ff;"></button>
+        <button class="theme-btn" data-theme="theme-ultra-violet" title="Ultra Violet" style="background:#8b5cf6;"></button>
+        <button class="theme-btn" data-theme="theme-emerald" title="Matrix Emerald" style="background:#10b981;"></button>
+        <button class="theme-btn" data-theme="theme-gold" title="Royal Gold" style="background:#f59e0b;"></button>
+        <button class="theme-btn" data-theme="theme-flame-orange" title="Flame Orange" style="background:#ff4500;"></button>
+        <button class="theme-btn" data-theme="theme-crimson" title="Blood Crimson" style="background:#e11d48;"></button>
+        <button class="theme-btn" data-theme="theme-lime" title="Electric Lime" style="background:#84cc16;"></button>
+        <button class="theme-btn" data-theme="theme-aqua" title="Aqua Ocean" style="background:#06b6d4;"></button>
+        <button class="theme-btn" data-theme="theme-fuchsia" title="Hot Fuchsia" style="background:#ec4899;"></button>
+        <button class="theme-btn rainbow-btn" data-theme="theme-rainbow" title="🌈 Animated Rainbow RGB" style="background: linear-gradient(135deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #8b00ff);"></button>
+      </div>
+      <!-- Edit Card Trigger -->
+      <button id="editCardBtn" class="header-tool-btn" title="Edit Card Text">
+        <i class="fa-solid fa-pen"></i> Edit
+      </button>
+      <!-- Sound FX Toggle -->
+      <button id="soundToggleBtn" class="glass-icon-btn" title="Toggle Sound FX">
+        <i class="fa-solid fa-volume-high"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Experience Stage -->
+  <main class="hologram-stage-layout">
+    
+    <!-- 3D Hologram Card Stage Container -->
+    <div class="card-stage-column">
+      
+      <div class="stage-top-bar">
+        <div class="live-pill">
+          <span class="live-dot"></span> 3D HOLOGRAPHIC SMART CARD
+        </div>
+        <button class="action-chip" id="flipCardBtn">
+          <i class="fa-solid fa-arrows-rotate"></i> Flip (QR Code)
+        </button>
+      </div>
+
+      <!-- 3D Perspective Card Wrapper -->
+      <div class="card-3d-wrapper" id="cardWrapper">
+        <div class="hologram-card" id="hologramCard">
+          
+          <!-- Holographic Sheen & Glare Reflections -->
+          <div class="card-glare" id="cardGlare"></div>
+          <div class="card-scanlines"></div>
+
+          <!-- CARD FRONT: EXACT 3D NEON GLASS DESIGN -->
+          <div class="card-face card-front" id="cardCaptureTarget">
+            
+            <!-- Glowing Neon Border Frame -->
+            <div class="neon-card-border"></div>
+
+            <!-- Top Header: Instagram Logo + Cursive Text + Live Badge -->
+            <div class="card-top-header">
+              <div class="ig-brand-row">
+                <div class="ig-gradient-box-logo">
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+                <span class="ig-script-text">Instagram</span>
+              </div>
+              <div class="neon-active-badge">
+                <span class="pulse-dot"></span> PRO
+              </div>
+            </div>
+
+            <!-- Central Glowing Circular Profile Photo -->
+            <div class="card-avatar-wrapper">
+              <div class="neon-avatar-halo"></div>
+              <div class="avatar-ring-border">
+                <div class="avatar-img-frame" id="avatarFrame">
+                  <img src="assets/profile.png" alt="Mohammed Shakib" id="cardAvatarImg">
+                </div>
+              </div>
+            </div>
+
+            <!-- Profile Info Text -->
+            <div class="card-content-body">
+              <h1 class="creator-fullname" id="cardFullName">Mohammed Shakib</h1>
+              <p class="creator-tagline" id="cardTagline">@official_shakib13 • Digital Creator</p>
+
+              <!-- Stats Line -->
+              <div class="stats-mini-line">
+                <span><strong>8</strong> Posts</span> • <span><strong>41</strong> Followers</span> • <span><strong>243</strong> Following</span>
+              </div>
+
+              <!-- Action Buttons Row -->
+              <div class="card-action-row">
+                <a href="https://instagram.com/official_shakib13" target="_blank" class="glowing-pill-cta-btn" id="cardCtaBtn">
+                  FOLLOW PROFILE
+                </a>
+                <a href="https://wa.me/?text=Hello%20Shakib%20(@itz_me_shakib123)" target="_blank" class="glowing-wa-pill-btn" id="cardWaBtn" title="WhatsApp: @itz_me_shakib123">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Card Bottom Bar: Heart & Signature -->
+            <div class="card-bottom-bar">
+              <div class="bottom-heart-pill" id="cardHeartBtn" title="Like Card">
+                <i class="fa-solid fa-heart"></i>
+                <span>1.4K</span>
+              </div>
+              <div class="bottom-sig-brand">
+                <i class="fa-solid fa-signature"></i> Shakib
+              </div>
+            </div>
+
+          </div>
+
+          <!-- CARD BACK: SCANNABLE QR CODE & DIRECT CONNECT -->
+          <div class="card-face card-back">
+            <div class="neon-card-border"></div>
+
+            <div class="back-top-info">
+              <i class="fa-solid fa-qrcode back-qr-icon"></i>
+              <h2>SCAN TO FOLLOW</h2>
+              <p>Scan with any phone camera or Instagram</p>
+            </div>
+
+            <div class="qr-code-holder">
+              <div class="qr-neon-halo"></div>
+              <div id="cardQrcode" class="card-qrcode-box"></div>
+              <div class="qr-center-ig-logo">
+                <i class="fa-brands fa-instagram"></i>
+              </div>
+            </div>
+
+            <div class="back-account-pill">
+              <img src="assets/profile.png" class="back-mini-av" alt="Shakib">
+              <div class="back-acc-text">
+                <strong>@official_shakib13</strong>
+                <small>Official Profile • Tap below to connect</small>
+              </div>
+            </div>
+
+            <button class="flip-return-btn" id="flipReturnBtn">
+              <i class="fa-solid fa-rotate-left"></i> Return to Front
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Action Buttons Under Card -->
+      <div class="stage-bottom-actions">
+        <button class="glow-cta-btn download-cta" id="downloadCardBtn">
+          <i class="fa-solid fa-download"></i> Save Hologram Card (HD)
+        </button>
+        <button class="glow-cta-btn ig-open-cta" id="openIgProfileBtn">
+          <i class="fa-brands fa-instagram"></i> Open Instagram
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Right Side: Quick Connect & Links Hub -->
+    <div class="sidebar-hub-column">
+      
+      <!-- Connect Links Panel -->
+      <div class="glass-panel">
+        <div class="panel-head">
+          <i class="fa-solid fa-bolt"></i>
+          <h3>Quick Connect Hub</h3>
+        </div>
+        <div class="hub-links-list">
+          <a href="https://instagram.com/official_shakib13" target="_blank" class="hub-link-card ig">
+            <div class="hub-link-icon"><i class="fa-brands fa-instagram"></i></div>
+            <div class="hub-link-details">
+              <strong>Follow on Instagram</strong>
+              <small>@official_shakib13</small>
+            </div>
+            <span class="hub-link-badge">Follow</span>
+          </a>
+
+          <!-- WhatsApp Connect -->
+          <a href="https://wa.me/?text=Hello%20Shakib%20(@itz_me_shakib123)" target="_blank" class="hub-link-card wa" id="whatsappLinkCard">
+            <div class="hub-link-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <div class="hub-link-details">
+              <strong>WhatsApp Connect</strong>
+              <small>@itz_me_shakib123</small>
+            </div>
+            <span class="hub-link-badge">Chat</span>
+          </a>
+
+          <!-- Instagram Direct Messenger DM -->
+          <a href="https://ig.me/m/official_shakib13" target="_blank" rel="noopener noreferrer" class="hub-link-card dm" id="dmMessengerLink">
+            <div class="hub-link-icon"><i class="fa-brands fa-facebook-messenger"></i></div>
+            <div class="hub-link-details">
+              <strong>Direct Instagram Messenger</strong>
+              <small>Chat with @official_shakib13</small>
+            </div>
+            <span class="hub-link-badge">Message</span>
+          </a>
+
+          <a href="https://instagram.com/itz_me_shakib123" target="_blank" class="hub-link-card sec">
+            <div class="hub-link-icon"><i class="fa-solid fa-user"></i></div>
+            <div class="hub-link-details">
+              <strong>Secondary Profile</strong>
+              <small>@itz_me_shakib123</small>
+            </div>
+            <span class="hub-link-badge">Visit</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Photo Gallery Moments -->
+      <div class="glass-panel">
+        <div class="panel-head">
+          <i class="fa-solid fa-images"></i>
+          <h3>Featured Photos</h3>
+        </div>
+        <div class="hub-photo-row">
+          <div class="hub-photo-thumb" onclick="openPhotoPreview('assets/profile.png', 'Portrait HD')">
+            <img src="assets/profile.png" alt="Portrait">
+          </div>
+          <div class="hub-photo-thumb" onclick="openPhotoPreview('assets/photo2.png', 'Outdoor Park Shoot')">
+            <img src="assets/photo2.png" alt="Park Shoot">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Edit Card Modal (Protected with Master Password) -->
+  <div class="app-modal" id="editModal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3 id="modalTitle"><i class="fa-solid fa-shield-halved" style="color:var(--neon-primary)"></i> Security Verification</h3>
+        <button class="close-btn" id="closeEditModalBtn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <!-- Step 1: Security Password Verification Screen -->
+      <div class="modal-auth-box" id="modalAuthBox">
+        <div class="auth-icon-wrap">
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <h4>Enter Master Password</h4>
+        <p>This hologram card is locked. Enter password to modify.</p>
+        
+        <div class="form-group" style="margin-top: 1rem;">
+          <input type="password" id="adminPasswordInput" placeholder="Enter password..." autocomplete="off">
+          <small id="authErrorMsg" class="auth-error-text" style="display: none; color: #ff3040; margin-top: 0.35rem; font-weight: 700;">
+            <i class="fa-solid fa-triangle-exclamation"></i> Incorrect Password! Access Denied.
+          </small>
+        </div>
+
+        <button class="glow-cta-btn unlock-btn" id="unlockEditBtn">
+          <i class="fa-solid fa-key"></i> Unlock & Edit
+        </button>
+      </div>
+
+      <!-- Step 2: Protected Edit Form (Unlocked only with MOHDshakib@123) -->
+      <div class="modal-body" id="modalEditFields" style="display: none;">
+        
+        <!-- Photo Update (Password Protected) -->
+        <div class="form-group">
+          <label>Update Profile Photo</label>
+          <div class="modal-photo-upload-row">
+            <img src="assets/profile.png" id="modalPreviewImg" class="modal-photo-preview" alt="Preview">
+            <label for="securePhotoInput" class="modal-upload-chip">
+              <i class="fa-solid fa-cloud-arrow-up"></i> Choose New Photo
+            </label>
+            <input type="file" id="securePhotoInput" accept="image/*" style="display: none;">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="editFullName" value="Mohammed Shakib">
+        </div>
+        <div class="form-group">
+          <label>Tagline / Profession</label>
+          <input type="text" id="editTagline" value="Digital Creator">
+        </div>
+        <div class="form-group">
+          <label>Instagram Handle</label>
+          <input type="text" id="editHandle" value="official_shakib13">
+        </div>
+        <div class="form-group">
+          <label>WhatsApp Username</label>
+          <input type="text" id="editWhatsapp" value="itz_me_shakib123">
+        </div>
+        <div class="form-row-3">
+          <div class="form-group">
+            <label>Posts</label>
+            <input type="number" id="editPosts" value="8">
+          </div>
+          <div class="form-group">
+            <label>Followers</label>
+            <input type="text" id="editFollowers" value="41">
+          </div>
+          <div class="form-group">
+            <label>Following</label>
+            <input type="number" id="editFollowing" value="243">
+          </div>
+        </div>
+        <button class="glow-cta-btn save-btn" id="saveCardBtn">Save & Lock Card</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-notification" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastMsg">Action completed</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
