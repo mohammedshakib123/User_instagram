@@ -156,11 +156,22 @@ body.theme-rainbow .orb-1 {
 }
 
 /* Base Reset */
-*, *::before, *::after {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+*::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Font smoothing for icons - DO NOT set font-family here, FA controls its own */
+.fa, .fas, .far, .fal, .fat, .fad, .fab, .fa-solid, .fa-regular,
+.fa-light, .fa-thin, .fa-duotone, .fa-brands, [class^="fa-"], [class*=" fa-"] {
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
 }
 
 html {
